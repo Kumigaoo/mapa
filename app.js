@@ -546,14 +546,36 @@ class App {
    */
   actualitzarFiltreTipus() {
     const filterType = document.getElementById("filter-type");
-    filterType.innerHTML = '<option value="Tots">Tots</option>';
+    const currentValue = filterType.value; // Guardar la selecció actual
 
+    // Crear un array amb els tipus actuals al dropdown
+    const existingTypes = Array.from(filterType.options)
+      .map((option) => option.value.toLowerCase())
+      .filter((value) => value !== "Tots");
+
+    console.log(
+      Array.from(filterType.options)
+        .map((option) => option.value)
+        .filter((value) => value !== "Tots")
+    );
+
+    // Afegir només els nous tipus que no existeixin
     this.tipusDisponibles.forEach((tipus) => {
-      const option = document.createElement("option");
-      option.value = tipus;
-      option.textContent = tipus;
-      filterType.appendChild(option);
+      if (!existingTypes.includes(tipus.toLowerCase())) {
+        const option = document.createElement("option");
+        option.value = tipus;
+        option.textContent = tipus.toLowerCase();
+        filterType.appendChild(option);
+      }
     });
+
+    // Restaurar la selecció anterior si encara existeix
+    if (
+      currentValue &&
+      Array.from(filterType.options).some((opt) => opt.value === currentValue)
+    ) {
+      filterType.value = currentValue;
+    }
   }
 
   /**
