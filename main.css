@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#map {
+  height: 600px;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+.no-results {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+.no-results button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filtres {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  grid-column: 1;
+}
+
+#drop-zone.dragover {
+  border-color: #000;
+  background-color: #f0f0f0;
+}
+
+#llista-punts {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.punt-interes {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.espai {
+  background-color: #e6f7ff;
+}
+
+.atraccio {
+  background-color: #fff7e6;
+}
+
+.museu {
+  background-color: #f6ffed;
+}
+
+.punt-info {
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#country-info {
+  margin-bottom: 20px;
+}
+
+#clear-btn {
+  padding: 8px 16px;
+  background-color: #f5222d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+}

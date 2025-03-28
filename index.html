@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestió de Punts d'Interès</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="filtres">
+      <div id="country-info"></div>
+
+      <div>
+        <label for="filter-type">Tipus:</label>
+        <select id="filter-type">
+          <option value="Tots">Tots</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="filter-order">Ordenació:</label>
+        <select id="filter-order">
+          <option value="Ascendent">Ascendent</option>
+          <option value="Descendent">Descendent</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="filter-name">Filtrar per nom:</label>
+        <input
+          type="text"
+          id="filter-name"
+          placeholder="Busca per nom, ciutat o direcció"
+        />
+      </div>
+
+      <button id="clear-btn">Netejar Llista</button>
+    </div>
+    <div id="llista-punts">
+      <p>No hi ha informació a mostrar</p>
+    </div>
+    <div id="drop-zone">Arrossega i deixa anar el fitxer CSV aquí</div>
+
+    <div id="llista-punts">
+      <p>No hi ha informació a mostrar</p>
+    </div>
+
+    <div id="map"></div>
+
+    <div>
+      <p>Total d'elements: <span id="total-elements">0</span></p>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
